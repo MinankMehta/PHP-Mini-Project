@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Search - MLIB</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for the Advanced Search page */
+        .search-container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #bf953f; /* Darker gold color */
+            color: #000;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #fff; /* White background on hover */
+            color: #bf953f; /* Darker gold text color on hover */
+            border-color: #fff; /* White border on hover */
+            transform: scale(1.05); /* Slight scale-up on hover for a subtle effect */
+        }
+        .search-container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .form-group select:hover {
+            border-color: #bf953f;
+        }
+
+        /* Style the options within the dropdown */
+        .form-group select option {
+        background-color: #bf953f; /* Background color for options */
+        color: #fff; /* Text color for options */
+        padding: 5px; /* Padding for better spacing */
+        border: 1px solid #000; /* Subtle border */
+        font-family: Arial, sans-serif; /* Font selection */
+        font-size: 16px; /* Font size */
+        transition: background-color 0.3s, color 0.3s; /* Add transition for hover effect */
+        }
+
+    .form-group select option:hover {
+        background-color: #bf953f; /* Background color on hover */
+        color: #fff; /* Text color on hover */
+        }
+
+        button[type="submit"] {
+            background-color: #bf953f;
+            color: #000;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #fff;
+            color: #bf953f;
+            border-color: #fff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html">&ensp;MLIB</a>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="#">Advanced Search&nbsp;</a></li>
+                    <li><a href="#">Upcoming Books&nbsp;</a></li>
+                    <li><a href="#">Review Blog&nbsp;</a></li>
+                    <li><a href="#">Upload New</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <main>
+        <div class="search-container">
+            <h2>Advanced Search</h2>
+            <br>
+            <form action="search_results.php" method="post">
+                <div class="form-group">
+                    <label for="author">Authors:</label>
+                    <select name="author" id="author">
+                        <option value="default"></option>
+                        <option value="author1">Author 1</option>
+                        <option value="author2">Author 2</option>
+                        <!-- Add more authors here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genres:</label>
+                    <select name="genre" id="genre">
+                        <option value="default"></option>
+                        <option value="genre1">Genre 1</option>
+                        <option value="genre2">Genre 2</option>
+                        <!-- Add more genres here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="display">Display:</label>
+                    <select name="display" id="display">
+                        <label for="display">Display</label>
+                        <option value="default"></option>
+                        <option value="list">List View</option>
+                        <option value="grid">Grid View</option>
+                    </select>
+                </div>
+                <br>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

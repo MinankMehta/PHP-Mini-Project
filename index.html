@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLIB - Online Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html">&ensp;MLIB</a>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="#">Advanced Search&nbsp;</a></li>
+                    <li><a href="upcoming.html">Upcoming Books&nbsp;</a></li>
+                    <li><a href="#">Review Blog&nbsp;</a></li>
+                    <li><a href="#">Upload New</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+        </div>
+
+        <div class="book-gallery">
+            <!-- Sample book cards -->
+            <div class="book-card">
+                <img src="book1.jpg" alt="Book 1">
+                <h3>Book Title 1</h3>
+                <p>Author: Author Name</p>
+                <p>Ratings: 3.5</p>
+                <br>
+                <p><a href="login.html">Click to download</a></p>
+                <br>
+                <div class="rating">
+                    <form action="rate_book.php" method="post">
+                        <input type="hidden" name="book_id" value="1"> <!-- Replace with the actual book ID -->
+                        <input type="number" name="rating" min="1" max="5" required>
+                        <button type="submit">Rate</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <img src="book2.jpg" alt="Book 1">
+                <h3>Book Title 1</h3>
+                <p>Author: Author Name</p>
+                <p>Ratings: 3.5</p>
+                <br>
+                <p><a href="login.html">Click to download</a></p>
+                <br>
+                <div class="rating">
+                    <form action="rate_book.php" method="post">
+                        <input type="hidden" name="book_id" value="1"> <!-- Replace with the actual book ID -->
+                        <input type="number" name="rating" min="1" max="5" required>
+                        <button type="submit">Rate</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Add more book cards here -->
+        </div>
+    </main>
+</body>
+</html>
