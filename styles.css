@@ -120,7 +120,17 @@ button {
 
 /* Search button styles */
 /* Search button styles */
-button {
+button{
+    background-color: #bf953f; /* Darker gold color */
+    color: #000;
+        padding: 10px 20px;
+    border: 1px solid black; /* Add black border */
+    border-radius: 250px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition for smooth color and border change */
+}
+.my-search {
     background-color: #bf953f; /* Darker gold color */
     color: #000;
         padding: 10px 20px;
@@ -132,12 +142,17 @@ button {
 }
 
 /* Change button color and border color to white on hover */
-button:hover {
+button:hover{
     background-color: #fff; /* White background on hover */
     color: #bf953f; /* Darker gold text color on hover */
     border-color: #bf953f; /* White border on hover */
 }
 
+.my-search:hover{
+    background-color: #fff; /* White background on hover */
+    color: #bf953f; /* Darker gold text color on hover */
+    border-color: #bf953f; /* White border on hover */
+}
 /* Book card styles */
 .book-card {
     background-color: #bf953f; /* Darker gold color */
