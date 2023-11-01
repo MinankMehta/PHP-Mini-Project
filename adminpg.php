@@ -466,7 +466,7 @@ textarea{
       </div>
 
       <div class="form-group">
-        <label for="title" class="notetitle">Type (teacher/admin/student)</label>
+        <label for="title" class="notetitle">Type (admin/user)</label>
         <input type="text" class="form-control" id="type1" name="type1">
       </div>
       <button type="submit" class="btn addnotebtn">Add Data</button>

@@ -17,7 +17,7 @@ CREATE TABLE `userdata` (
 --
 INSERT INTO `userdata` (`sno`, `Emailid`, `Password`, `Type`, `name`) VALUES
 (1, 'admin@somaiya.edu', 'admin123', 'admin', 'admin'),
-(2, 'userd@gmail.com','user123','user','user');
+(2, 'user@gmail.com','user123','user','user');
 
 CREATE TABLE `bookinfo` (
   `bname` varchar(50) NOT NULL,
@@ -26,8 +26,9 @@ CREATE TABLE `bookinfo` (
   `totalrating` int NOT NULL,
   `rno` int NOT NULL,
   `name` varchar(50) NOT NULL,
-  `image` VARCHAR(50) NOT NULL
+  `image` VARCHAR(50) NOT NULL,
+  `pdf` VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `bookinfo` (`bname`, `author`, `genre`, `totalrating`, `rno`, `name`, `image`) VALUES
-('Book 1', 'author 1', 'genre 1', 30, 6, 'user', 'book1');
+INSERT INTO `bookinfo` (`bname`, `author`, `genre`, `totalrating`, `rno`, `name`, `image`, `pdf`) VALUES
+('Book 1', 'author 1', 'genre 1', 30, 6, 'user', 'book1', 'out');

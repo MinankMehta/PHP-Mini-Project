@@ -1,9 +1,13 @@
 <?php
 session_start();
+if ($_SESSION['loggedin'] & $_SESSION['type'] != 'admin') {
+    header("Location: index.php"); 
+    exit();
+}
 if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['type'] != 'admin') {
       header("Location: login.php"); 
       exit();
-  }
+}
 require 'connection.php';
 
 if (isset($_POST['submit'])) {

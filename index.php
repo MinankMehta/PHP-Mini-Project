@@ -60,7 +60,7 @@
                 echo '<p>Author: ' . $row['author'] . '</p>';
                 echo '<p>Ratings: ' . $rating . '</p>';
                 echo '<br>';
-                echo '<p><a href="login.html">Click to download</a></p>';
+                echo '<p><a href="download.php?filename=' . $row["pdf"] . '">Click to download</a></p>';
                 echo '<br>';
                 echo '<div class="rating">';
                 echo '<form action="rate_book.php" method="post">';

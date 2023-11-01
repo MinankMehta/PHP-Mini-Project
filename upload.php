@@ -33,9 +33,28 @@ if (isset($_POST["submit"])) {
             $newImageName1=$newImageName. '.' . $imageExtension;
 
             move_uploaded_file($tmpName, 'img/' . $newImageName1);
+        }
+    }
+    if ($_FILES["files"]["error"] == 4) {
+        echo "<script> alert('File Does Not Exist'); </script>";
+    } else {
+        $fileName = $_FILES["files"]["name"];
+        $fileSize = $_FILES["files"]["size"];
+        $tmpName = $_FILES["files"]["tmp_name"];
+
+        $validFilesExtension = ['pdf'];
+        $filesExtension = pathinfo($fileName, PATHINFO_EXTENSION);
+
+        if (!in_array(strtolower($filesExtension), $validFilesExtension)) {
+            echo "<script> alert('Invalid File Extension'); </script>";
+        } else {
+            $newFileName = uniqid();
+            $newFileName1=$newFileName. '.' . $filesExtension;
+
+            move_uploaded_file($tmpName, 'file/' . $newFileName1);
             
             // Insert book information into the bookinfo table
-            $query = "INSERT INTO `bookinfo` (`bname`, `author`, `genre`, `totalrating`, `rno`, `name`, `image`) VALUES ('$bname', '$author', '$genre', $totalrating, $rno, '$name', '$newImageName')";
+            $query = "INSERT INTO `bookinfo` (`bname`, `author`, `genre`, `totalrating`, `rno`, `name`, `image`, `pdf`) VALUES ('$bname', '$author', '$genre', $totalrating, $rno, '$name', '$newImageName', '$newFileName')";
             if (mysqli_query($conn, $query)) {
                 echo "<script> alert('Successfully Added'); </script>";
             } else {
@@ -149,7 +168,9 @@ if (isset($_POST["submit"])) {
             <label for="genre">Genre: </label>
             <input type="text" name="genre" id="genre" required value=""> <br>
             <label for="image">Image: </label>
-            <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" value=""> <br> <br>
+            <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png" value=""> <br>
+            <label for="files">File (PDF): </label>
+            <input type="file" name="files" id="files" accept=".pdf" value=""> <br>
             <button type="submit" name="submit">Submit</button>
         </form>
         <br>
